@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Projects</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Sidebar - Projects -->
+        <aside class="sidebar">
+            <h2>My Projects</h2>
+            
+            <button id="add-project-btn" class="btn btn-primary">
+                + New Project
+            </button>
+
+            <div id="project-list" class="project-list"></div>
+        </aside>
+
+        <!-- Main Area - Todos -->
+        <main class="main-content">
+            <header class="header">
+                <h1 id="current-project-name">No Project Selected</h1>
+                
+                <button id="add-todo-btn" class="btn btn-primary">
+                    + New Todo
+                </button>
+            </header>
+
+            <div id="todo-list" class="todo-list"></div>
+        </main>
+
+    </div>
+
+    <script src="bundle.js"></script>
+</body>
+</html>
