@@ -21,17 +21,44 @@
         </aside>
 
         <!-- Main Area - Todos -->
-        <main class="main-content">
-            <header class="header">
-                <h1 id="current-project-name">No Project Selected</h1>
-                
-                <button id="add-todo-btn" class="btn btn-primary">
-                    + New Todo
-                </button>
-            </header>
+    <main class="main-content">
+        <header class="header">
+            <h1 id="current-project-name">No Project Selected</h1>
+            <button id="add-todo-btn" class="btn btn-primary">
+                + New Todo
+            </button>
+        </header>
 
-            <div id="todo-list" class="todo-list"></div>
-        </main>
+    <!-- Better Add Todo Form -->
+    <div class="add-todo-form" id="add-todo-form">
+        <input 
+            type="text" 
+            id="todo-title-input" 
+            placeholder="What needs to be done?"
+            class="todo-input">
+
+        <div class="form-row">
+            <input 
+                type="date" 
+                id="todo-due-input" 
+                class="todo-input">
+
+            <select id="todo-priority-input" class="todo-input">
+                <option value="high">🔴 High Priority</option>
+                <option value="medium" selected>🟡 Medium Priority</option>
+                <option value="low">🟢 Low Priority</option>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button id="save-todo-btn" class="btn btn-primary">Add Todo</button>
+            <button id="cancel-todo-btn" class="btn btn-secondary">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Todo List -->
+    <div id="todo-list" class="todo-list"></div>
+    </main>
 
     </div>
 

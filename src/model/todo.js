@@ -6,6 +6,7 @@ export class Todo {
         this.priority = priority;
         this.id = crypto.randomUUID();
         this.completed = false;
+        this.originalProjectId = null;
     }
 
     update (data) {

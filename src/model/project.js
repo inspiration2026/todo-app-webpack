@@ -29,4 +29,23 @@ export class Project {
             todo.update(updateData);
         };
     }
+    // NEW: Move a todo to another project
+    moveTodoTo(todoId, targetProject) {
+        const index = this.todos.findIndex(todo => todo.id === todoId);
+        if (index === -1) return null;
+
+        const todo = this.todos[index];
+        this.todos.splice(index, 1);           // remove from current project
+
+        // Add to target project, preserving originalProjectId
+        targetProject.addTodo(
+            todo.title,
+            todo.description,
+            todo.dueDate,
+            todo.priority,
+            todo.originalProjectId || this.id   // save original if not already set
+        );
+
+        return todo;
+    }
 }

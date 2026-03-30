@@ -7,19 +7,27 @@ export const projectView = {
     },
 
     render(projects, currentProjectId) {
-        if (!this.container) return;
+    if (!this.container) return;
 
-        this.container.innerHTML = '';
+    this.container.innerHTML = '';
 
-        projects.forEach(project => {
-            const projectElement = document.createElement('div');
-            projectElement.className = `project-item ${project.id === currentProjectId ? 'active' : ''}`;
-            projectElement.dataset.id = project.id;
+    projects.forEach(project => {
+        const isDoneProject = project.id === "done-project-id";
+
+        const projectElement = document.createElement('div');
+        projectElement.className = `project-item ${project.id === currentProjectId ? 'active' : ''}`;
+        projectElement.dataset.id = project.id;
+
+        if (isDoneProject) {
+            projectElement.classList.add('done-project');
+            projectElement.innerHTML = `✅ ${project.name}`;
+        } else {
             projectElement.textContent = project.name;
+        }
 
-            this.container.appendChild(projectElement);
-        });
-    },
+        this.container.appendChild(projectElement);
+    });
+},
 
     attachListeners() {
         this.container.addEventListener('click', (event) => {
